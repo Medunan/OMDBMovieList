@@ -27,6 +27,10 @@
 		180A5D312C369701005D6BEC /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A5D302C369701005D6BEC /* MovieCollectionViewCell.swift */; };
 		180A5D332C36978B005D6BEC /* OBImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A5D322C36978B005D6BEC /* OBImageCache.swift */; };
 		180A5D352C36D307005D6BEC /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A5D342C36D307005D6BEC /* MovieDetailView.swift */; };
+		180A5D372C370179005D6BEC /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A5D362C370179005D6BEC /* PersistenceManager.swift */; };
+		180A5D392C370F76005D6BEC /* AlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A5D382C370F76005D6BEC /* AlertVC.swift */; };
+		180A5D3B2C3710C2005D6BEC /* FavoriteViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A5D3A2C3710C2005D6BEC /* FavoriteViewCell.swift */; };
+		180A5D3D2C371E42005D6BEC /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A5D3C2C371E42005D6BEC /* EmptyStateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +75,10 @@
 		180A5D302C369701005D6BEC /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		180A5D322C36978B005D6BEC /* OBImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBImageCache.swift; sourceTree = "<group>"; };
 		180A5D342C36D307005D6BEC /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
+		180A5D362C370179005D6BEC /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		180A5D382C370F76005D6BEC /* AlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertVC.swift; sourceTree = "<group>"; };
+		180A5D3A2C3710C2005D6BEC /* FavoriteViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewCell.swift; sourceTree = "<group>"; };
+		180A5D3C2C371E42005D6BEC /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +175,7 @@
 				180A5D2C2C368FF2005D6BEC /* SearchResultVC.swift */,
 				180A5D302C369701005D6BEC /* MovieCollectionViewCell.swift */,
 				180A5D342C36D307005D6BEC /* MovieDetailView.swift */,
+				180A5D3A2C3710C2005D6BEC /* FavoriteViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -176,6 +185,7 @@
 			children = (
 				180A5D1D2C363C8E005D6BEC /* NetworkManager.swift */,
 				180A5D212C364403005D6BEC /* OmdbErrors.swift */,
+				180A5D362C370179005D6BEC /* PersistenceManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -188,6 +198,8 @@
 				180A5D282C36819A005D6BEC /* OBTitleLabel.swift */,
 				180A5D2E2C369540005D6BEC /* UIHelper.swift */,
 				180A5D322C36978B005D6BEC /* OBImageCache.swift */,
+				180A5D382C370F76005D6BEC /* AlertVC.swift */,
+				180A5D3C2C371E42005D6BEC /* EmptyStateView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -324,14 +336,18 @@
 			files = (
 				180A5D352C36D307005D6BEC /* MovieDetailView.swift in Sources */,
 				180A5CED2C35B2C4005D6BEC /* MainViewController.swift in Sources */,
+				180A5D3D2C371E42005D6BEC /* EmptyStateView.swift in Sources */,
 				180A5D202C3640A7005D6BEC /* OmdbModel.swift in Sources */,
+				180A5D372C370179005D6BEC /* PersistenceManager.swift in Sources */,
 				180A5D292C36819A005D6BEC /* OBTitleLabel.swift in Sources */,
 				180A5CE92C35B2C4005D6BEC /* AppDelegate.swift in Sources */,
+				180A5D3B2C3710C2005D6BEC /* FavoriteViewCell.swift in Sources */,
 				180A5D312C369701005D6BEC /* MovieCollectionViewCell.swift in Sources */,
 				180A5D272C3670CE005D6BEC /* OBButton.swift in Sources */,
 				180A5D2D2C368FF2005D6BEC /* SearchResultVC.swift in Sources */,
 				180A5D1E2C363C8E005D6BEC /* NetworkManager.swift in Sources */,
 				180A5D192C35BADB005D6BEC /* FavoriteViewController.swift in Sources */,
+				180A5D392C370F76005D6BEC /* AlertVC.swift in Sources */,
 				180A5CEB2C35B2C4005D6BEC /* SceneDelegate.swift in Sources */,
 				180A5D252C36699D005D6BEC /* OBTextField.swift in Sources */,
 				180A5D222C364403005D6BEC /* OmdbErrors.swift in Sources */,

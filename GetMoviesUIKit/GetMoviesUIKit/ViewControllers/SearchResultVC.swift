@@ -34,6 +34,7 @@ class SearchResultVC: UIViewController {
         configureCollectionView()
         getSearchResults(movieName: movieName, page: page)
         configureDataSource()
+        configureViewController()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,6 +42,11 @@ class SearchResultVC: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
 
+    func configureViewController() {
+        view.backgroundColor = .systemBackground
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
     func configureCollectionView() {
         collectionView = UICollectionView(frame: view.bounds,
                                           collectionViewLayout: UIHelper.createColumnFlowLayout(in: view))
@@ -72,12 +78,18 @@ class SearchResultVC: UIViewController {
                 self.results.append(contentsOf: results.Search)
                 
                 if self.results.isEmpty {
-                    print("No Results")
+                    let message = "InValid Search"
+                    DispatchQueue.main.async {self.showEmptyStateView(with: message, in: self.view)}
                     return
                 }
                 self.updateData(on: self.results)
                 
             case .failure(let error):
+                if error == .tooManyData {
+                    DispatchQueue.main.async {
+                        self.showEmptyStateView(with: "Too Many Data!!", in: self.view)
+                    }
+                }
                 print(error)
             }
         }
@@ -89,6 +101,7 @@ class SearchResultVC: UIViewController {
         dataSource = UICollectionViewDiffableDataSource<Section, St_Movie>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, result) -> UICollectionViewCell? in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.reuseID, for: indexPath) as! MovieCollectionViewCell
             cell.set(movie: result)
+            cell.delegate = self
             return cell
         })
     }
@@ -99,6 +112,33 @@ class SearchResultVC: UIViewController {
         snapshot.appendItems(followers)
         DispatchQueue.main.async {
             self.dataSource.apply(snapshot, animatingDifferences: true)
+        }
+    }
+}
+
+extension SearchResultVC: MovieCollectionViewCellDelegate {
+    func didTapFavoriteButton(for movie: St_Movie) {
+        showLoadingView()
+        NetworkManager.shared.getMovieDetails(for: movie.imdbID) { [weak self] result in
+            guard let self = self else { return }
+            self.dismissLoadingView()
+            
+            switch result {
+            case .success(let detail):
+                let favorite = St_Movie(Title: detail.Title, Year: detail.Year, imdbID: detail.imdbID, Type: detail.Type, Poster: detail.Poster)
+                
+                PersistenceManager.updateWith(favorite: favorite, actionType: .add) { [weak self] error in
+                    guard let self = self else { return  }
+                    guard let error = error else {
+                        self.presentAlertMainThread(title: "Success!", message: "You have successfully favorited this user!", buttonTitle: "Ok")
+                        return
+                    }
+                    self.presentAlertMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+                }
+                
+            case .failure(let error):
+                self.presentAlertMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+            }
         }
     }
 }

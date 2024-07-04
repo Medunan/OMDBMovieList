@@ -8,6 +8,11 @@
 import Foundation
 import UIKit
 
+
+protocol MovieCollectionViewCellDelegate: AnyObject {
+    func didTapFavoriteButton(for movie: St_Movie)
+}
+
 class MovieCollectionViewCell: UICollectionViewCell {
     static let reuseID = "MovieCell"
 
@@ -15,6 +20,9 @@ class MovieCollectionViewCell: UICollectionViewCell {
     let titleLabel = UILabel()
     let releaseDateLabel = UILabel()
     let favoriteButton = UIButton()
+    
+    weak var delegate: MovieCollectionViewCellDelegate?
+    private var movie: St_Movie?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,9 +34,15 @@ class MovieCollectionViewCell: UICollectionViewCell {
     }
 
     func set(movie: St_Movie) {
+        self.movie = movie
         titleLabel.text = movie.Title
         releaseDateLabel.text = movie.Year
         posterImageView.downloadImage(from: movie.Poster)
+    }
+    
+    @objc func favoriteButtonAction() {
+        guard let movie = movie else { return }
+               delegate?.didTapFavoriteButton(for: movie)
     }
 
     private func configure() {
@@ -42,6 +56,8 @@ class MovieCollectionViewCell: UICollectionViewCell {
         
         let heartImage = UIImage(systemName: "heart.fill")
         favoriteButton.setImage(heartImage, for: .normal)
+        
+        self.favoriteButton.addTarget(self, action: #selector(favoriteButtonAction), for: .touchUpInside)
         
         addSubview(posterImageView)
         addSubview(titleLabel)
