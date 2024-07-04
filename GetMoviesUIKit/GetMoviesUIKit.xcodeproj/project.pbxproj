@@ -31,6 +31,7 @@
 		180A5D392C370F76005D6BEC /* AlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A5D382C370F76005D6BEC /* AlertVC.swift */; };
 		180A5D3B2C3710C2005D6BEC /* FavoriteViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A5D3A2C3710C2005D6BEC /* FavoriteViewCell.swift */; };
 		180A5D3D2C371E42005D6BEC /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A5D3C2C371E42005D6BEC /* EmptyStateView.swift */; };
+		180A5D3F2C3727F2005D6BEC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A5D3E2C3727F2005D6BEC /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		180A5D382C370F76005D6BEC /* AlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertVC.swift; sourceTree = "<group>"; };
 		180A5D3A2C3710C2005D6BEC /* FavoriteViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewCell.swift; sourceTree = "<group>"; };
 		180A5D3C2C371E42005D6BEC /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		180A5D3E2C3727F2005D6BEC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 				180A5D322C36978B005D6BEC /* OBImageCache.swift */,
 				180A5D382C370F76005D6BEC /* AlertVC.swift */,
 				180A5D3C2C371E42005D6BEC /* EmptyStateView.swift */,
+				180A5D3E2C3727F2005D6BEC /* Constants.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				180A5D192C35BADB005D6BEC /* FavoriteViewController.swift in Sources */,
 				180A5D392C370F76005D6BEC /* AlertVC.swift in Sources */,
 				180A5CEB2C35B2C4005D6BEC /* SceneDelegate.swift in Sources */,
+				180A5D3F2C3727F2005D6BEC /* Constants.swift in Sources */,
 				180A5D252C36699D005D6BEC /* OBTextField.swift in Sources */,
 				180A5D222C364403005D6BEC /* OmdbErrors.swift in Sources */,
 				180A5D2F2C369540005D6BEC /* UIHelper.swift in Sources */,

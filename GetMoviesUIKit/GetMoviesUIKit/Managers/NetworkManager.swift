@@ -10,7 +10,7 @@ import UIKit
 
 class NetworkManager {
     static let shared = NetworkManager()
-    private let baseURL = "https://www.omdbapi.com/?apikey=ff5b7c7c"
+    private let baseURL = "https://www.omdbapi.com/?apikey=\(Constants.APIKey)"
     let cache = NSCache<NSString, UIImage>()
     
     private init() {}
