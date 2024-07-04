@@ -26,6 +26,7 @@
 		180A5D2F2C369540005D6BEC /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A5D2E2C369540005D6BEC /* UIHelper.swift */; };
 		180A5D312C369701005D6BEC /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A5D302C369701005D6BEC /* MovieCollectionViewCell.swift */; };
 		180A5D332C36978B005D6BEC /* OBImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A5D322C36978B005D6BEC /* OBImageCache.swift */; };
+		180A5D352C36D307005D6BEC /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A5D342C36D307005D6BEC /* MovieDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		180A5D2E2C369540005D6BEC /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		180A5D302C369701005D6BEC /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		180A5D322C36978B005D6BEC /* OBImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBImageCache.swift; sourceTree = "<group>"; };
+		180A5D342C36D307005D6BEC /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 				180A5D182C35BADB005D6BEC /* FavoriteViewController.swift */,
 				180A5D2C2C368FF2005D6BEC /* SearchResultVC.swift */,
 				180A5D302C369701005D6BEC /* MovieCollectionViewCell.swift */,
+				180A5D342C36D307005D6BEC /* MovieDetailView.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				180A5D352C36D307005D6BEC /* MovieDetailView.swift in Sources */,
 				180A5CED2C35B2C4005D6BEC /* MainViewController.swift in Sources */,
 				180A5D202C3640A7005D6BEC /* OmdbModel.swift in Sources */,
 				180A5D292C36819A005D6BEC /* OBTitleLabel.swift in Sources */,
@@ -506,6 +510,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GetMoviesUIKit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -532,6 +537,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GetMoviesUIKit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

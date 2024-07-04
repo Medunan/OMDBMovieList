@@ -11,7 +11,7 @@ protocol SearchResultVCDelegate: AnyObject {
     func didRequestSearch(for movieName: String)
 }
 
-class SearchResultVC: UIViewController, UICollectionViewDelegate {
+class SearchResultVC: UIViewController {
     
     enum Section {  // hashable - diffable data source
         case main
@@ -126,4 +126,34 @@ extension SearchResultVC: UISearchResultsUpdating, UISearchBarDelegate {
     }
     
     
+}
+
+
+extension SearchResultVC: UICollectionViewDelegate {
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let offsetY         = scrollView.contentOffset.y  // how for we scroll down
+        let contentHeight   = scrollView.contentSize.height //10 followers height points
+        let height          = scrollView.frame.size.height // height in points of the target phone
+        
+        if offsetY > contentHeight - height {
+            guard hasMoreResults else { return }
+            page += 1
+            getSearchResults(movieName: movieName, page: page)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let activeArray = isSearching ? filteredResults : results
+        let selectedMovie = activeArray[indexPath.item]
+        
+        let movieDetailVC = MovieDetailView()
+        movieDetailVC.title = selectedMovie.Title
+        movieDetailVC.movie = selectedMovie
+        
+        if let navigationController = self.navigationController {
+            navigationController.pushViewController(movieDetailVC, animated: true)
+        } else {
+            print("view controller is not embedded in a UINavigationController")
+        }
+    }
 }

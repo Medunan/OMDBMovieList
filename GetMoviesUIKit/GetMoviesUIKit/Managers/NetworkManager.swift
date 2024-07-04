@@ -55,4 +55,44 @@ class NetworkManager {
         }
         task.resume()
     }
+    
+    func getMovieDetails(for imdbID: String, completed: @escaping (Result<St_MovieInfo,OmdbErrors>) -> Void) {
+        let endpoint = baseURL + "&i=\(imdbID)"
+        
+        guard let url = URL(string: endpoint) else {
+            completed(.failure(.invalidMoviename))
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let _ = error {
+                completed(.failure(.unableToComplete))
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                completed(.failure(.invalidResponse))
+                return
+            }
+            
+            guard let data = data else {
+                completed(.failure(.invalidData))
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                if let movieDetials = try? decoder.decode(St_MovieInfo.self, from: data) {
+                    print("Successful response")
+                    completed(.success(movieDetials))
+                } else {
+                    print("Unable to decode")
+                    completed(.failure(.invalidData))
+                }
+            }
+        }
+        task.resume()
+    }
+    
+    
 }
