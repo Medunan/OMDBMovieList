@@ -20,6 +20,12 @@
 		180A5D202C3640A7005D6BEC /* OmdbModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A5D1F2C3640A7005D6BEC /* OmdbModel.swift */; };
 		180A5D222C364403005D6BEC /* OmdbErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A5D212C364403005D6BEC /* OmdbErrors.swift */; };
 		180A5D252C36699D005D6BEC /* OBTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A5D242C36699D005D6BEC /* OBTextField.swift */; };
+		180A5D272C3670CE005D6BEC /* OBButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A5D262C3670CE005D6BEC /* OBButton.swift */; };
+		180A5D292C36819A005D6BEC /* OBTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A5D282C36819A005D6BEC /* OBTitleLabel.swift */; };
+		180A5D2D2C368FF2005D6BEC /* SearchResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A5D2C2C368FF2005D6BEC /* SearchResultVC.swift */; };
+		180A5D2F2C369540005D6BEC /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A5D2E2C369540005D6BEC /* UIHelper.swift */; };
+		180A5D312C369701005D6BEC /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A5D302C369701005D6BEC /* MovieCollectionViewCell.swift */; };
+		180A5D332C36978B005D6BEC /* OBImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A5D322C36978B005D6BEC /* OBImageCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +63,12 @@
 		180A5D1F2C3640A7005D6BEC /* OmdbModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmdbModel.swift; sourceTree = "<group>"; };
 		180A5D212C364403005D6BEC /* OmdbErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmdbErrors.swift; sourceTree = "<group>"; };
 		180A5D242C36699D005D6BEC /* OBTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBTextField.swift; sourceTree = "<group>"; };
+		180A5D262C3670CE005D6BEC /* OBButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBButton.swift; sourceTree = "<group>"; };
+		180A5D282C36819A005D6BEC /* OBTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBTitleLabel.swift; sourceTree = "<group>"; };
+		180A5D2C2C368FF2005D6BEC /* SearchResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultVC.swift; sourceTree = "<group>"; };
+		180A5D2E2C369540005D6BEC /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		180A5D302C369701005D6BEC /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
+		180A5D322C36978B005D6BEC /* OBImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBImageCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +162,8 @@
 			children = (
 				180A5CEC2C35B2C4005D6BEC /* MainViewController.swift */,
 				180A5D182C35BADB005D6BEC /* FavoriteViewController.swift */,
+				180A5D2C2C368FF2005D6BEC /* SearchResultVC.swift */,
+				180A5D302C369701005D6BEC /* MovieCollectionViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -167,6 +181,10 @@
 			isa = PBXGroup;
 			children = (
 				180A5D242C36699D005D6BEC /* OBTextField.swift */,
+				180A5D262C3670CE005D6BEC /* OBButton.swift */,
+				180A5D282C36819A005D6BEC /* OBTitleLabel.swift */,
+				180A5D2E2C369540005D6BEC /* UIHelper.swift */,
+				180A5D322C36978B005D6BEC /* OBImageCache.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -303,12 +321,18 @@
 			files = (
 				180A5CED2C35B2C4005D6BEC /* MainViewController.swift in Sources */,
 				180A5D202C3640A7005D6BEC /* OmdbModel.swift in Sources */,
+				180A5D292C36819A005D6BEC /* OBTitleLabel.swift in Sources */,
 				180A5CE92C35B2C4005D6BEC /* AppDelegate.swift in Sources */,
+				180A5D312C369701005D6BEC /* MovieCollectionViewCell.swift in Sources */,
+				180A5D272C3670CE005D6BEC /* OBButton.swift in Sources */,
+				180A5D2D2C368FF2005D6BEC /* SearchResultVC.swift in Sources */,
 				180A5D1E2C363C8E005D6BEC /* NetworkManager.swift in Sources */,
 				180A5D192C35BADB005D6BEC /* FavoriteViewController.swift in Sources */,
 				180A5CEB2C35B2C4005D6BEC /* SceneDelegate.swift in Sources */,
 				180A5D252C36699D005D6BEC /* OBTextField.swift in Sources */,
 				180A5D222C364403005D6BEC /* OmdbErrors.swift in Sources */,
+				180A5D2F2C369540005D6BEC /* UIHelper.swift in Sources */,
+				180A5D332C36978B005D6BEC /* OBImageCache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

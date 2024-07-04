@@ -17,7 +17,7 @@ class NetworkManager {
     
     func getMovieNames(for movieName: String, page: Int, completed: @escaping (Result<St_SearchMovieModel,OmdbErrors>) -> Void) {
         let endpoint = baseURL + "&type=movie" + "&s=\(movieName)" + "&page=\(page)"
-
+        
         guard let url = URL(string: endpoint) else {
             completed(.failure(.invalidMoviename))
             return
@@ -41,14 +41,17 @@ class NetworkManager {
             
             do {
                 let decoder = JSONDecoder()
-                let movieInfo = try decoder.decode(St_SearchMovieModel.self, from: data)
-                print(movieInfo)
-                completed(.success(movieInfo))
+                if let movieInfo = try? decoder.decode(St_SearchMovieModel.self, from: data) {
+                    print("Successful response")
+                    completed(.success(movieInfo))
+                } else if let errorResponse = try? decoder.decode(St_SearchErrorModel.self, from: data) {
+                    print("Error response")
+                    completed(.failure(.tooManyData))
+                } else {
+                    print("Unable to decode")
+                    completed(.failure(.invalidData))
+                }
             }
-            catch  {
-                completed(.failure(.invalidData))
-            }
-                     
         }
         task.resume()
     }

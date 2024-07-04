@@ -14,4 +14,5 @@ enum OmdbErrors: String, Error {
     case invalidData        = "The dara received from the server was invalid. Please try again."
     case unableToFavorite   = "There was an error favoritung this user Please try again."
     case alreadyInFavorites = "You've already favorited this user."
+    case tooManyData        = "Too many results."
 }

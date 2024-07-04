@@ -7,6 +7,11 @@
 
 import Foundation
 
+struct St_SearchErrorModel: Codable {
+    var Response: String
+    var Error: String
+}
+
 struct St_SearchMovieModel: Codable {
     var Search: [St_Movie]
     var totalResults: String

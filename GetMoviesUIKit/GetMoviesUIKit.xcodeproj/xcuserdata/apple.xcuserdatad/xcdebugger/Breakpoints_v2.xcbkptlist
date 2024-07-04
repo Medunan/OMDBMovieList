@@ -7,15 +7,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3F083EAA-2684-4384-9943-7436820A1073"
+            uuid = "02FA9EA7-538A-4618-9E0E-216634931756"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GetMoviesUIKit/Managers/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
             landmarkName = "getMovieNames(for:page:completed:)"
             landmarkType = "7">
          </BreakpointContent>
