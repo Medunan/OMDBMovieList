@@ -11,7 +11,7 @@ import UIKit
 class OBImageCache: UIImageView {
     
     let cache            = NetworkManager.shared.cache
-    let placeHolderImage = UIImage(systemName: "slash.circle.fill")!
+    let placeHolderImage = UIImage(systemName: "film")!
 
     override init(frame: CGRect) {
         super.init(frame: frame)

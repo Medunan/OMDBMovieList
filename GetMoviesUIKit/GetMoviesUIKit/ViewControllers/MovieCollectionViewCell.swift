@@ -54,7 +54,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
 
         releaseDateLabel.font = .systemFont(ofSize: 15)
         
-        let heartImage = UIImage(systemName: "heart.fill")
+        let heartImage = UIImage(systemName: "film")
         favoriteButton.setImage(heartImage, for: .normal)
         
         self.favoriteButton.addTarget(self, action: #selector(favoriteButtonAction), for: .touchUpInside)

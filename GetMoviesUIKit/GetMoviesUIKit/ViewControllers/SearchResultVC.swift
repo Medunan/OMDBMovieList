@@ -89,6 +89,10 @@ class SearchResultVC: UIViewController {
                     DispatchQueue.main.async {
                         self.showEmptyStateView(with: "Too Many Data!!", in: self.view)
                     }
+                } else {
+                    DispatchQueue.main.async {
+                        self.showEmptyStateView(with: error.localizedDescription, in: self.view)
+                    }
                 }
                 print(error)
             }
@@ -130,7 +134,7 @@ extension SearchResultVC: MovieCollectionViewCellDelegate {
                 PersistenceManager.updateWith(favorite: favorite, actionType: .add) { [weak self] error in
                     guard let self = self else { return  }
                     guard let error = error else {
-                        self.presentAlertMainThread(title: "Success!", message: "You have successfully favorited this user!", buttonTitle: "Ok")
+                        self.presentAlertMainThread(title: "Success!", message: "You have successfully favorited this Movie!", buttonTitle: "Ok")
                         return
                     }
                     self.presentAlertMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
